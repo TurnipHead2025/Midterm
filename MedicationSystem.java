@@ -241,6 +241,31 @@ public class MedicationSystem {
 
 
                 case 7:
+                    System.out.println("\n ---Search By Name---");
+                    System.out.println("Enter name: ");
+                    String searchName = input.nextLine();
+                    boolean findName = false;
+
+                    for (int i = 0; i < patients.size(); i++){
+                        Patient p = patients.get(i);
+                        if (p.getName().equalsIgnoreCase(searchName)){
+                            System.out.println("\nMatch Found in Patients:");
+                            System.out.println(p);
+                            findName = true;
+                        }
+                    }       
+                    for (int i = 0; i < medications.size(); i++){
+                        Medication m= medications.get(i);
+                        if (m.getName().equalsIgnoreCase(searchName)){
+                            System.out.println("\n Match found in Medications:");
+                            System.out.println(m);
+                            findName = true;
+                        }
+                    } 
+                    if (!findName){
+                        System.out.println("Patient or Medication not found");
+                    }
+                    break;
                     
                 case 9:
                     System.out.println("Exiting system. Goodbye.");

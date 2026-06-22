@@ -60,6 +60,6 @@ public class Medication {
     }
 
     public String toString(){
-        return ("Id: " + id + "\n Name: " + name + "\n Doseage: " + dose + "\n Quantity: " + quantity + "\n Expiry Date: " + expiryDate +"\n");
+        return (" Id: " + id + "\n Name: " + name + "\n Doseage: " + dose + "\n Quantity: " + quantity + "\n Expiry Date: " + expiryDate +"\n");
     }
 }
