@@ -20,7 +20,11 @@ public class Patient extends Person {
         return rx;
     }
 
+     public void addRx(Prescription Rx){
+        this.rx.add(Rx);
+    }
+
     public String toString(){
-        return (super.toString() + "\nMedications: " + medications + "\nPresciptions: " + rx );
+        return (super.toString() + "\nMedications: " + medications + "\nPresciptions: " + rx + "\n");
     }
 }

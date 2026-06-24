@@ -26,6 +26,6 @@ public class Doctor extends Person {
     }
 
     public String toString(){
-        return (super.toString() + ", Specializtion: " + specialization + ", Patients: " + patients +". ");
+        return (super.toString() + "\nSpecializtion: " + specialization + "\nPatients: " + patients +"\n");
     }
 }

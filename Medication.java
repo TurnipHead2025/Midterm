@@ -35,7 +35,7 @@ public class Medication {
         return this.quantity;
     }
 
-    public Date getDate(){
+    public Date getExpiryDate(){
         return this.expiryDate;
     }
 

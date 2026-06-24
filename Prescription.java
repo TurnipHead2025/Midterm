@@ -63,7 +63,8 @@ public class Prescription {
         this.rxexpiry = rxexpiry;
     }
 
+    //advertig infinite loop issues in printing the Dr RX Report
     public String toString(){
-        return ("RX Id: " + id + "\nDoctor: " + doctor + ", Patient: " + patient + "\nMedication: " + medication + "\nRX Expiry Date" + rxexpiry +". " );
+        return ("RX Id: " + id + "\nDoctor: " + doctor.getName() + "\nPatient: " + patient.getName() + "\nMedication: " + medication.getName() + "\nRX Expiry Date " + rxexpiry +"\n");
     }
 }

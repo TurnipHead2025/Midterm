@@ -47,12 +47,16 @@ public class MedicationSystem {
         medications.add(new Medication(92, "Hyronalin", "30cc", 16, date3));
 
         //Add new Prescription
-        prescriptions.add(new Prescription(66, doctors.get(1), patients.get(1),medications.get(2) ));
-        prescriptions.add(new Prescription(68, doctors.get(2), patients.get(2),medications.get(0) ));
+        prescriptions.add(new Prescription(66, doctors.get(0), patients.get(2),medications.get(2) ));
+        prescriptions.add(new Prescription(68, doctors.get(2), patients.get(1),medications.get(0) ));
 
-        //Link a patient to a doctor. for Doctors at index 0 use the addPatient method to add patient index 3
+        //Link a patient to a doctor. for Doctors at any index use the addPatient method to add patient at index with public get method
         doctors.get(0).addPatient(patients.get(2));
+        doctors.get(2).addPatient(patients.get(1));
 
+        // Link an RX with a patient
+        patients.get(2).addRx(prescriptions.get(0));
+        patients.get(1).addRx(prescriptions.get(1));
 
         //Keyboard Scanner
         Scanner input = new Scanner(System.in);
@@ -267,6 +271,133 @@ public class MedicationSystem {
                     }
                     break;
                     
+                case 8:
+                    System.out.println("Generate Reports System");
+                    System.out.println("1. Master System Summary");
+                    System.out.println("2. Expired Medication Audit");
+                    System.out.println("3. Doctor Prescription Report");
+                    System.out.println("4. Patient Prescription History");
+                    System.out.println("Select Report Type (1-4): ");
+
+                    int reportChoice = input.nextInt();
+                    input.nextLine();
+
+                    switch (reportChoice){
+                        case 1:
+                            //Loop though each ArrayList and print the records
+                            System.out.println("\n=================================");
+                            System.out.println("     MASTER SYSTEM SUMMARY       ");
+                            System.out.println("=================================");
+                            //Print All patients
+                            System.out.println("\n ---Registered Patients---\n");
+                            if (patients.isEmpty()){
+                                System.out.println("---No Patients Registered---");
+                            }else{
+                                for(int i = 0; i < patients.size(); i++){
+                                    System.out.println(patients.get(i));
+                                }
+                            }
+                            //Print all doctotrs
+                            System.out.println("********************\n");
+                            System.out.println("---Registered Doctors---\n");
+                            if (doctors.isEmpty()){
+                                System.out.println("No Doctors Found");
+                            }else{
+                                for(int j = 0; j < doctors.size(); j++){
+                                    System.out.println(doctors.get(j));
+                                }
+                            }
+                            //Print All Medications
+                            System.out.println("********************\n");
+                            System.out.println("---Current Medication Inventory---\n");
+                            if (medications.isEmpty()){
+                                System.out.println("No Medications Found");
+                            }else{
+                                for(int k= 0; k < medications.size(); k++){
+                                    System.out.println(medications.get(k));
+                                }
+                            }
+                            System.out.println("********************\n");
+                            break;
+
+                        case 2:
+                            //Medication expiry audit. Create the var to hold today's date (today). Loop through the medications ArrayList. Temporarily store the memory address of each medication object in the variable currentMed (which points to the object in the heap). Call getExpiryDate on each medication object and check if the date is before today. If it is, it's set foundExpired to true and print currentMed. 
+                            System.out.println("********************\n");
+                            System.out.println("---Expired Medication Audit---\n");
+                            Date today = new Date();
+                            boolean foundExpired = false;
+
+                            for(int m = 0; m < medications.size(); m++){
+                                Medication currentMed = medications.get(m);
+                                    if (currentMed.getExpiryDate().before(today)){                                       
+                                        System.out.println(currentMed);
+                                        foundExpired = true;
+                                    }
+                                }
+                                if (!foundExpired){
+                                    System.out.println("No expired medications found");
+                                }
+                                break;
+                         
+                        case 3:
+                            //Doctor Presciption Report. Loop through the doctors ArrayList. If userinput (docSearch) matches the name of the Dr at index (d) then get the patients for d by looping through the patient arrayList attached to that doctor. Getting each iteration and storing it in p. Print patient name and rx.
+                            System.out.println("********************\n");
+                            System.out.println("---Doctor Presciption Report---\n");
+                            System.out.println("Enter Name: ");
+                            String docSearch = input.nextLine();
+                            boolean docFound = false;
+                                for(int i = 0; i < doctors.size(); i++){
+                                    Doctor d = doctors.get(i);
+                                    if (d.getName().equalsIgnoreCase(docSearch)){
+                                        docFound =true;
+                                        System.out.println("\nPrescriptions issued by Dr. " + d.getName() + ":");
+                                            if (d.getPatient().isEmpty()){
+                                                System.out.println("This doctor has no patients");
+                                            }else {
+                                                for (int j = 0; j < d.getPatient().size(); j++){
+                                                    Patient p = d.getPatient().get(j);
+                                                    System.out.println("Patient: " + p.getName());
+                                                    System.out.println("Prescriptions " + p.getRx());
+                                                    }
+                                                }
+                                        }
+                                    }
+                                    if (!docFound){
+                                        System.out.println("Doctor " + docSearch + " was not found.");
+                                    }
+                                    break;                                   
+                        
+                        case 4:
+                            //Patient RX history Report. Store the local calendar in rxCal, using getInstance(). Subtract one year. Create a date object and store in oneYearAgo, using getTime(). Loop through the patients ArrayList. Temporarily store each object's address in variable p (which points to the object in the heap). Print out the name of each patient. Loop through the specific patient's RX. If the Rx is after one year ago, print only the drug name, using getMed() Prescription method and getName() Medication method.
+                            System.out.println("********************\n");
+                            System.out.println("---Patient Prescription History---\n");
+                            Calendar rxCal = Calendar.getInstance();
+                            rxCal.add(Calendar.YEAR, -1);
+                            Date oneYearAgo =rxCal.getTime();
+                            if (patients.isEmpty()){
+                                System.out.println("No Patients found");
+                            }else{
+                                for( int i = 0; i < patients.size(); i++){
+                                    Patient p = patients.get(i);
+                                    System.out.println("Patient " + p.getName());
+                                    boolean hasRecentRx = false;
+                                
+                                for (int j=0; j< p.getRx().size(); j++){
+                                    Prescription rx = p.getRx().get(j);
+                                    if (rx.getRxExpiry().after(oneYearAgo)){
+                                        System.out.println("- " + rx.getMed().getName()+ "\n");
+                                        hasRecentRx = true;
+                                    }
+                                }
+                            
+                                if (!hasRecentRx){
+                                    System.out.println("This patient has no prescriptions in the past year\n");
+                                }
+                            } 
+                        }
+                        break;                        
+                    }
+                    break;
                 case 9:
                     System.out.println("Exiting system. Goodbye.");
                     running = false;

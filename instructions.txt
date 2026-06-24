@@ -165,10 +165,12 @@ Special Rule: For these 3 medications, you must use a random number generator to
 [X] Delete a Patient (Removing them from the master list).
 
 5. The Search Operations
-[ ] Search by Name: Code that loops through a list, looks for a matching name string, and prints out that specific person or drug's details.
+[X] Search by Name: Code that loops through a list, looks for a matching name string, and prints out that specific person or drug's details.
 
 6. The Reports (Printing Summaries)
-[ ] Master System Report: Print everything currently sitting in all four lists.
-[ ] Doctor Prescription Report: Filter and print only prescriptions issued by one specific doctor.
+[x] Master System Report: Print everything currently sitting in all four lists.
+[X] Doctor Prescription Report: Filter and print only prescriptions issued by one specific doctor.
 [ ] Patient Prescription History: Print a list of a patient's drugs from the past year, summarized down to just the text names of the drugs.
-[ ] Expiry Audit Report: Loop through the pharmacy inventory, check the dates, and print a warning report listing every drug that is expired.
+[x] Expiry Audit Report: Loop through the pharmacy inventory, check the dates, and print a warning report listing every drug that is expired.
+
+
