@@ -71,7 +71,7 @@ public class MedicationSystem {
             System.out.println("4. Restock Medication");
             System.out.println("5. Edit Patient Details");
             System.out.println("6. Delete a Patient");
-            System.out.println("7. Search by name");
+            System.out.println("7. Search by Patient or Medication name");
             System.out.println("8. Generate System Reports");
             System.out.println("9. Exit");
             System.out.println("Choose an Option: ");
@@ -245,8 +245,8 @@ public class MedicationSystem {
 
 
                 case 7:
-                    System.out.println("\n ---Search By Name---");
-                    System.out.println("Enter name: ");
+                    System.out.println("\n ---Search Patient or Medication By Name---");
+                    System.out.println("Enter name of patient or medication: ");
                     String searchName = input.nextLine();
                     boolean findName = false;
 

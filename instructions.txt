@@ -170,7 +170,26 @@ Special Rule: For these 3 medications, you must use a random number generator to
 6. The Reports (Printing Summaries)
 [x] Master System Report: Print everything currently sitting in all four lists.
 [X] Doctor Prescription Report: Filter and print only prescriptions issued by one specific doctor.
-[ ] Patient Prescription History: Print a list of a patient's drugs from the past year, summarized down to just the text names of the drugs.
+[X] Patient Prescription History: Print a list of a patient's drugs from the past year, summarized down to just the text names of the drugs.
 [x] Expiry Audit Report: Loop through the pharmacy inventory, check the dates, and print a warning report listing every drug that is expired.
+
+Part 1: User Documentation (The "How to Use It" Guide)
+[X] Application Overview: A paragraph explaining what the app does (e.g., "A medical clinic management system that tracks doctors, patients, and inventory, and generates real-time compliance and prescription reports").
+[X] Class Explanations: A brief write-up of your classes (Doctor, Patient, Medication, Prescription) and how they work together.
+[ ] User Guide: Quick instructions on how to start the app and what numbers to press in the console menu.
+[ ] Class Diagram: A visual chart showing your classes as boxes, listing their variables, with lines connecting them (e.g., a line from Doctor to Patient to show they are associated).
+
+Part 2: Development Documentation (The Technical Guide)
+[X] JavaDocs: Generate folder.
+[ ] Directory Structure: text-based "file tree" to show the hierarchy, followed by a brief explanation of what is inside each folder. It literally looks like this:
+ProjectRoot/
+├── src/          (Your .java source files)
+├── bin/          (Your compiled .class files)
+└── doc/          (Your JavaDocs)
+[ ] Build Process: A quick text description of how to compile and run your code via the terminal (e.g., "Open terminal, type javac Main.java to compile, then java Main to run").
+[ ] Compiler Time Dependencies: Since you didn't download any outside frameworks, your dependency is just the standard Java Development Kit (JDK).
+[ ] Development Standards: Mention your coding rules (e.g., using CamelCase naming conventions, descriptive variable names, and clear indentation).
+[ ] Theoretical Database Design: If you saved this data in a database instead of ArrayLists, what would it look like? You just need to describe 4 tables (Doctors, Patients, Medications, Prescriptions) and list their columns.
+[ ] GitHub Guide: Step-by-step instructions for someone else to grab your code (e.g., "1. Go to [URL], 2. Copy the clone link, 3. Run git clone <link> in terminal").
 
 

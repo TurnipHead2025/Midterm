@@ -63,7 +63,7 @@ public class Prescription {
         this.rxexpiry = rxexpiry;
     }
 
-    //advertig infinite loop issues in printing the Dr RX Report
+    //adverting infinite loop issues in printing the Dr RX Report. So that Doctor doesn't print the Patient, who prints the Prescription, who prints the Doctor....
     public String toString(){
         return ("RX Id: " + id + "\nDoctor: " + doctor.getName() + "\nPatient: " + patient.getName() + "\nMedication: " + medication.getName() + "\nRX Expiry Date " + rxexpiry +"\n");
     }
