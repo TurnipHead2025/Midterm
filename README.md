@@ -17,7 +17,7 @@ The system is built using Object-Oriented Programming (OOP) principles, utilizin
 The application features a fully interactive, text-based console menu. When started, users are presented with a main menu to choose which data sector they want to manage.
 
 #### Navigation Steps:
-**Launch the Application:** Run the program to display the main system options.
+**Launch the Application:** Run 'java MedicationSystem' is the CLI to display the main system options.
 **Select a Category:** 
 The application features a fully interactive, text-based console menu. When started, users navigate the system by entering a number from `1` to `9` to execute specific tasks
    **1** - Add a New Patient
@@ -34,4 +34,25 @@ The application features a fully interactive, text-based console menu. When star
 The diagram below illustrates the UML architecture of the clinic management system, detailing the attributes, methods, and structural associations between the core classes.
 
 ![Clinic System Class Diagram](class_diagram.png)
+
+
+## 2.0 Technical Documentation
+
+### 2.1 Directory Structure
+ClinicManagementSystem/
+├── src/
+│   ├── Doctor.java
+│   ├── Patient.java
+│   ├── Medication.java
+│   ├── Prescription.java
+│   └── MedicationSystem.java
+├── bin/
+│   ├── Doctor.class
+│   ├── Patient.class
+│   ├── Medication.class
+│   ├── Prescription.class
+│   └── MedicationSystem.class
+└── doc/
+    └── (Generated JavaDoc HTML files and stylesheets)
+
  

@@ -176,12 +176,12 @@ Special Rule: For these 3 medications, you must use a random number generator to
 Part 1: User Documentation (The "How to Use It" Guide)
 [X] Application Overview: A paragraph explaining what the app does (e.g., "A medical clinic management system that tracks doctors, patients, and inventory, and generates real-time compliance and prescription reports").
 [X] Class Explanations: A brief write-up of your classes (Doctor, Patient, Medication, Prescription) and how they work together.
-[ ] User Guide: Quick instructions on how to start the app and what numbers to press in the console menu.
-[ ] Class Diagram: A visual chart showing your classes as boxes, listing their variables, with lines connecting them (e.g., a line from Doctor to Patient to show they are associated).
+[X] User Guide: Quick instructions on how to start the app and what numbers to press in the console menu.
+[X] Class Diagram: A visual chart showing your classes as boxes, listing their variables, with lines connecting them (e.g., a line from Doctor to Patient to show they are associated).
 
 Part 2: Development Documentation (The Technical Guide)
 [X] JavaDocs: Generate folder.
-[ ] Directory Structure: text-based "file tree" to show the hierarchy, followed by a brief explanation of what is inside each folder. It literally looks like this:
+[X] Directory Structure: text-based "file tree" to show the hierarchy, followed by a brief explanation of what is inside each folder. It literally looks like this:
 ProjectRoot/
 ├── src/          (Your .java source files)
 ├── bin/          (Your compiled .class files)
