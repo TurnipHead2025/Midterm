@@ -189,7 +189,7 @@ ProjectRoot/
 [ ] Build Process: A quick text description of how to compile and run your code via the terminal (e.g., "Open terminal, type javac Main.java to compile, then java Main to run").
 [ ] Compiler Time Dependencies: Since you didn't download any outside frameworks, your dependency is just the standard Java Development Kit (JDK).
 [ ] Development Standards: Mention your coding rules (e.g., using CamelCase naming conventions, descriptive variable names, and clear indentation).
-[ ] Theoretical Database Design: If you saved this data in a database instead of ArrayLists, what would it look like? You just need to describe 4 tables (Doctors, Patients, Medications, Prescriptions) and list their columns.
+[X ] Theoretical Database Design: If you saved this data in a database instead of ArrayLists, what would it look like? You just need to describe 4 tables (Doctors, Patients, Medications, Prescriptions) and list their columns.
 [ ] GitHub Guide: Step-by-step instructions for someone else to grab your code (e.g., "1. Go to [URL], 2. Copy the clone link, 3. Run git clone <link> in terminal").
 
 

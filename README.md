@@ -1,4 +1,4 @@
-# Medical Clinic Prescritption Management System
+# Medical Clinic Prescription Management System
 
 ## 1.0 User Documentation
 
@@ -55,4 +55,53 @@ ClinicManagementSystem/
 └── doc/
     └── (Generated JavaDoc HTML files and stylesheets)
 
- 
+ ### 2.2 Build & Execution Process
+To compile and run the application via a standard CLI environment, execute the following commands from the project root directory:
+**Compilation: `javac -d bin src/*.java`**
+**Execution: `java -cp bin MedicationSystem`**
+
+### 2.3 Development & Clean Code Standards
+The codebase strictly adheres to the following structural engineering guidelines:
+**Naming Conventions** UpperCamelCase for class names; lowerCamelCase for variables and methods featuring descriptive naming.
+**Encapsulation** All class state attributes are isolated using the private keyword and regulated through public getter and setter methods.
+
+ ## 2.3 Theoretical Database Design (PostgreSQL Architecture)
+If this application were migrated from transient, in-memory ArrayList storage to a permanent PostgreSQL Relational Database Management System (RDBMS), the architecture would be structured into the following four tables.   
+
+**Doctors Table** Tracks the clinic's medical staff attributes.
+doctor_id (SERIAL PRIMARY KEY): An auto-incrementing integer unique to each physician.
+name (TEXT): The full name of the doctor.
+age (INT): The doctor's age.
+phone_number (TEXT): Professional contact number.
+specialization (TEXT): The doctor's area of medical expertise.
+
+**Patients Table** Stores patient demographic profiles.
+patient_id (SERIAL PRIMARY KEY): An auto-incrementing integer unique to each patient.
+name (TEXT): The full name of the patient.
+age (INT): The patient's age.
+phone_number (TEXT): Patient contact number.
+
+**Medications Table** Manages the active pharmacy warehouse inventory.
+medication_id (SERIAL PRIMARY KEY): Auto-incrementing unique identifier for the drug batch.
+name (TEXT): The name of the medication.
+dose (TEXT): The dosage strength description (e.g., "20mg").
+quantity (INT): Current physical stock level in the inventory.
+expiry_date (DATE): The regulatory expiration date of the batch.
+
+**Prescriptions Table** The central relational "junction" table mapping the interactions between doctors, patients, and medications.
+prescription_id (SERIAL PRIMARY KEY): Auto-incrementing unique identifier for the prescription order.
+doctor_id (INT REFERENCES Doctors(doctor_id)): Foreign Key specifying who authorized the script.
+patient_id (INT REFERENCES Patients(patient_id)): Foreign Key specifying who receives the medication.
+medication_id (INT REFERENCES Medications(medication_id)): Foreign Key specifying which drug is being dispensed.
+rx_expiry (DATE): The date the individual script expires.
+
+ ## 2.4 GitHub Roster & Clone Guide
+To download, inspect, or collaborate on the ClinicManagementSystem codebase, follow these step-by-step terminal instructions to clone the repository using Git.
+
+**Locate the Repository URL**
+Navigate to the hosted project page on GitHub. Click the green Code button on the top right of the repository dashboard and copy the secure URL under the HTTPS tab: https://github.com/TurnipHead2025/Midterm.git
+
+**Clone the Project via Terminal**
+Open your local terminal (or Command Prompt) and navigate to the directory where you want to save the project folder (e.g., cd Documents). Execute the git clone command followed by your copied link: git clone https://github.com/TurnipHead2025/Midterm.git
+
+
